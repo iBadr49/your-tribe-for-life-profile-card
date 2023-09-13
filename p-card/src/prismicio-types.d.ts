@@ -4,12 +4,23 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = MeinfoSlice;
 
 /**
  * Content for home documents
  */
 interface HomeDocumentData {
+	/**
+	 * Titel field in *home*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: home.titel
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	titel: prismic.RichTextField;
+
 	/**
 	 * Slice Zone field in *home*
 	 *
@@ -63,13 +74,95 @@ interface HomeDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+export type HomeDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<
 	Simplify<HomeDocumentData>,
 	'home',
 	Lang
 >;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *Meinfo → Primary*
+ */
+export interface MeinfoSliceDefaultPrimary {
+	/**
+	 * naam field in *Meinfo → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meinfo.primary.naam
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	naam: prismic.RichTextField;
+
+	/**
+	 * image field in *Meinfo → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meinfo.primary.image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * text field in *Meinfo → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meinfo.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text: prismic.RichTextField;
+
+	/**
+	 * text2 field in *Meinfo → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meinfo.primary.text2
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text2: prismic.RichTextField;
+
+	/**
+	 * text3 field in *Meinfo → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meinfo.primary.text3
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	text3: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Meinfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MeinfoSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<MeinfoSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Meinfo*
+ */
+type MeinfoSliceVariation = MeinfoSliceDefault;
+
+/**
+ * Meinfo Shared Slice
+ *
+ * - **API ID**: `meinfo`
+ * - **Description**: Meinfo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MeinfoSlice = prismic.SharedSlice<'meinfo', MeinfoSliceVariation>;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -80,6 +173,15 @@ declare module '@prismicio/client' {
 	}
 
 	namespace Content {
-		export type { HomeDocument, HomeDocumentData, HomeDocumentDataSlicesSlice, AllDocumentTypes };
+		export type {
+			HomeDocument,
+			HomeDocumentData,
+			HomeDocumentDataSlicesSlice,
+			AllDocumentTypes,
+			MeinfoSlice,
+			MeinfoSliceDefaultPrimary,
+			MeinfoSliceVariation,
+			MeinfoSliceDefault
+		};
 	}
 }
