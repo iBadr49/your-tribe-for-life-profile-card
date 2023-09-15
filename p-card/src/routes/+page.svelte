@@ -8,22 +8,36 @@
 <!-- met deze code hieronder laat je je presmic.data zien op localhostpage -->
 <!-- <SliceZone slices={data.slices} {components} /> -->
 
-<div class="profile-card">
-	<h1>{data.slices[0].primary.naam[0].text}</h1>
-	<p>{data.slices[0].primary.text[0].text}</p>
-	<p>{data.slices[0].primary.text2[0].text}</p>
-	<p>{data.slices[0].primary.text3[0].text}</p>
-</div>
+<section class="profile-card">
+	<div class="image">
+		<img src={data.slices[0].primary.image.url} style="margin-right: 10px;" />
+	</div>
+	<div class="text">
+		<h1>{data.slices[0].primary.naam[0].text}</h1>
+
+		<p>{data.slices[0].primary.text[0].text}</p>
+		<p>{data.slices[0].primary.text2[0].text}</p>
+		<p id="email">{data.slices[0].primary.text3[0].text}</p>
+	</div>
+</section>
 
 <style>
-	:global(body) {
-		background-color: #000000;
+	img {
+		height: 200px;
+		width: auto;
 	}
+
 	.profile-card {
-		background-color: #ffffff;
-		box-shadow: 0 4px 6px #FB3640;
-		padding: 20px;
-		margin: 50px;
-		border-radius: 8px;
+		display: flex;
+		align-items: center;
+	}
+
+	.image {
+		margin-right: 10px;
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
 	}
 </style>

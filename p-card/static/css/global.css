@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Comic Sans MS;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  .profile-card {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    padding: 20px;
+  }
+
+  .image {
+    margin-right: 10px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+  }
