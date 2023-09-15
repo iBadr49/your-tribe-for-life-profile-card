@@ -2,6 +2,8 @@
 
 # Profile Card
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+<img src="https://github.com/iBadr49/your-tribe-for-life-profile-card/assets/112857932/927e7f6d-edf6-447a-9ec1-1763e28090a7" height=40%>
+
 
 
 ## 📂 Beschrijving
