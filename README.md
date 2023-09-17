@@ -2,7 +2,7 @@
 
 # Profile Card
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
-<img src="https://github.com/iBadr49/your-tribe-for-life-profile-card/assets/112857932/0075b309-8c24-4265-af2a-54125db9c5c6" height=40%>
+<img src="https://github.com/iBadr49/your-tribe-for-life-profile-card/assets/112857932/2e80f19c-e9ce-4836-adf9-41fc90835ae4" height=40%>
 
 
 
@@ -11,7 +11,7 @@
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
-Dit is een one web-visitekaartje  gemaakt met prismic en sveltekit, waar ik data uit prismic heb gehaald en gebruik van gemaakt zoals te zien op mijn pagina. Doel van deze opdracht was een datapunt uit een headless CMS selecteren en weergeeft op een website.
+Dit is mijn visitekaartje gemaakt met ``` prismic ``` en ``` sveltekit ```, waar ik data uit prismic heb gehaald en gebruik van gemaakt zoals te zien op mijn pagina. Doel van deze opdracht was een datapunt uit een headless CMS selecteren en weergeeft op een website.
 
 ## 🚀 Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
